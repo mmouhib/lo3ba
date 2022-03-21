@@ -1,7 +1,8 @@
 import Search from './Search';
 import styled from 'styled-components';
 import { Button } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect } from 'react';
+import DataRequest from '../request';
 
 const StyledNavBar = styled.div`
    display: flex;
@@ -22,6 +23,10 @@ const StyledTitle = styled.p`
 `;
 
 export default function NavBar() {
+   useEffect(() => {
+      DataRequest();
+   }, []);
+
    return (
       <StyledNavBar>
          <StyledTitle>lo3ba</StyledTitle>
