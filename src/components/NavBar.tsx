@@ -1,26 +1,8 @@
 import Search from './Search';
-import styled from 'styled-components';
 import { Button } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import DataRequest from '../request';
-
-const StyledNavBar = styled.div`
-   display: flex;
-   gap: 10%;
-   align-items: center;
-   justify-content: space-between;
-   padding: 0.5%;
-   height: 7%;
-   background: #d7d6d6;
-   box-shadow: 0 0 1000px 0 red;
-`;
-
-const StyledTitle = styled.p`
-   font-size: 2rem;
-   font-weight: bold;
-   color: white;
-   text-transform: uppercase;
-`;
+import { StyledTitle, StyledNavBar } from '../StyledComponents/Navbar';
 
 export default function NavBar() {
    useEffect(() => {
