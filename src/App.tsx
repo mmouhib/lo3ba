@@ -1,1 +1,7 @@
-export const App = () => <div>hw</div>;
+import Search from './components/Search';
+
+export const App = () => (
+   <div>
+      <Search />
+   </div>
+);
