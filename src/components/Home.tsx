@@ -11,14 +11,17 @@ const StyledHome = styled.div`
 
 const StyledSlogan = styled.p`
    color: white;
-   font-size: 5rem;
+   font-size: 5em;
    font-family: 'Bebas Neue', cursive;
    letter-spacing: 3px;
    font-weight: bold;
-   border: 1px solid #804ebd;
-   border-radius: 20px;
+   //border: 1px solid #804ebd;
+   //border-radius: 20px;
    padding: 20px;
    width: fit-content;
+   text-align: center;
+   text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+   //text-shadow: black 15px 12px;
 `;
 
 const StyledHomeContent = styled.div`
@@ -38,7 +41,8 @@ export default function Home(): JSX.Element {
                Your favourite <span style={{ color: 'red' }}>Video Games</span>, ALl in one place
             </StyledSlogan>
             <div>
-               <Button colorScheme="blue">Button</Button>
+               <Button colorScheme="blue">Login</Button>
+               <Button colorScheme="blue">sign Up</Button>
             </div>
          </StyledHomeContent>
       </StyledHome>

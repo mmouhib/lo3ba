@@ -1,5 +1,6 @@
 import Home from './components/Home';
 import styled from 'styled-components';
+import { SearchContextProvider } from './context/SearchContext';
 
 const StyledApp = styled.div`
    width: 100vw;
@@ -8,6 +9,8 @@ const StyledApp = styled.div`
 
 export const App = () => (
    <StyledApp>
-      <Home />
+      <SearchContextProvider>
+         <Home />
+      </SearchContextProvider>
    </StyledApp>
 );
