@@ -1,7 +1,6 @@
-import Search from './components/Search';
-
+import Home from './components/Home';
 export const App = () => (
    <div>
-      <Search />
+      <Home />
    </div>
 );
