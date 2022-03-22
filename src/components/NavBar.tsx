@@ -5,9 +5,9 @@ import DataRequest from '../request';
 import { StyledTitle, StyledNavBar } from '../StyledComponents/Navbar';
 
 export default function NavBar() {
-   useEffect(() => {
-      DataRequest();
-   }, []);
+   // useEffect(() => {
+   //    DataRequest();
+   // }, []);
 
    return (
       <StyledNavBar>
