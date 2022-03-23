@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from './NavBar';
+import NavBar from '../components/NavBar';
 import { Button } from '@chakra-ui/react';
 import { StyledSlogan, StyledHomeContent, StyledHome } from '../StyledComponents/Home';
 

@@ -5,13 +5,13 @@ import { StyledTitle, StyledNavBar } from '../StyledComponents/Navbar';
 import axios, {AxiosResponse} from "axios";
 
 export default function NavBar() {
-   useEffect(() => {
-       axios
-           .get(`https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}`)
-           .then(function (response: AxiosResponse): void {
-               console.log(response.data);
-           });
-   }, []);
+   // useEffect(() => {
+   //     axios
+   //         .get(`https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}`)
+   //         .then(function (response: AxiosResponse): void {
+   //             console.log(response.data);
+   //         });
+   // }, []);
 
    return (
       <StyledNavBar>
