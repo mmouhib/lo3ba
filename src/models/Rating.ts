@@ -4,6 +4,13 @@ export default class Rating {
    private _count: number;
    private _percent: number;
 
+   constructor(id: number, title: string, count: number, percent: number) {
+      this._id = id;
+      this._title = title;
+      this._count = count;
+      this._percent = percent;
+   }
+
    get id(): number {
       return this._id;
    }

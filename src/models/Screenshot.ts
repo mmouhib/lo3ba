@@ -1,4 +1,12 @@
 export default class Screenshot {
+   private _id: number;
+   private _url: URL;
+
+   constructor(id: number, url: URL) {
+      this._id = id;
+      this._url = url;
+   }
+
    get id(): number {
       return this._id;
    }
@@ -14,6 +22,4 @@ export default class Screenshot {
    set url(value: URL) {
       this._url = value;
    }
-   private _id: number;
-   private _url: URL;
 }

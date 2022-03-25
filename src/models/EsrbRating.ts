@@ -1,4 +1,4 @@
-export default class AgeRestriction {
+export default class EsrbRating {
    private _id: number;
    private _name: string;
    private _slug: string;
