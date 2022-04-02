@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 
-export default function GamesCatalog(): JSX.Element {
-   const [data, setData] = useState<any>(null);
+export default function GamesCatalog(): any {
+   const [data, setData] = useState<any>({});
 
    useEffect(() => {
       axios
@@ -13,11 +13,11 @@ export default function GamesCatalog(): JSX.Element {
    }, []);
 
    return (
-      <button
+      <p
          onClick={() => {
             console.log(data);
          }}>
-         click
-      </button>
+         {data[2].slug}
+      </p>
    );
 }
