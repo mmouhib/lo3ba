@@ -17,7 +17,7 @@ export default function GamesCatalog(): any {
          onClick={() => {
             console.log(data);
          }}>
-         {data[2].slug}
+         aaaa
       </p>
    );
 }
