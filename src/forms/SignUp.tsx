@@ -1,11 +1,15 @@
 import { Input, InputLeftElement, InputGroup, Select } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
 import PasswordInput from './PasswordInput';
-import NumberSelect from './NumberSelect';
-import MonthSelect from './MonthSelect';
+import NumberSelect from './selects/NumberSelect';
+import MonthSelect from './selects/MonthSelect';
 import { StyledForm, StyledSignUp, StyledBirthdateSection } from '../StyledComponents/StyledSignUp';
 import '../global.css';
-import CountrySelect from './CountriesSelect';
+import CountrySelect from './selects/CountriesSelect';
+import { useState } from 'react';
+import { Button } from '@chakra-ui/react';
+// @ts-ignore
+import ReCAPTCHA from 'react-google-recaptcha';
 
 function userNameGenerator(firstName: string, lastName: string): string[] {
    return [
@@ -18,6 +22,8 @@ function userNameGenerator(firstName: string, lastName: string): string[] {
 }
 
 export default function SignUp(): JSX.Element {
+   const [validCaptcha, setValidCaptcha] = useState<boolean>(false);
+
    return (
       <StyledSignUp className="component">
          <StyledForm>
@@ -52,23 +58,20 @@ export default function SignUp(): JSX.Element {
             </Select>
 
             <CountrySelect />
+
+            <ReCAPTCHA
+               style={{ margin: 'auto' }}
+               sitekey={process.env.REACT_APP_CAPTCHA_KEY}
+               onChange={(value: string) => {
+                  if (value !== null) setValidCaptcha(true);
+                  console.log(value);
+               }}
+            />
+
+            <Button disabled={!validCaptcha} type="submit" colorScheme="purple">
+               Click
+            </Button>
          </StyledForm>
       </StyledSignUp>
    );
 }
-
-/**
- * first name
- * last name
- * username (username generator)
- * email
- * password
- * confirmPassword
- * birthdate
- *
- * country
- * sex
- *
- * agree to user terms
- * captcha
- */

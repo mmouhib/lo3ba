@@ -1,5 +1,5 @@
 import { Select } from '@chakra-ui/react';
-import Countries from '../Countries';
+import Countries from '../../Countries';
 
 export default function CountrySelect() {
    return (
