@@ -32,7 +32,7 @@ export default function MonthSelect() {
 
    return (
       <Select placeholder="Month" variant="filled">
-         {shortMonths.map((element, index) => (
+         {longMonths.map((element, index) => (
             <option key={index} value={index + 1}>
                {element}
             </option>

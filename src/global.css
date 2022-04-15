@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-*{
-    user-select: none;
+* {
+   user-select: none;
+}
+
+.component {
+   width: 100vw;
+   height: 100vh;
 }

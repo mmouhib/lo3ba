@@ -1,4 +1,4 @@
-const data: object[] = [
+const data: any[] = [
    {
       code: 'AE',
       unicode: 'U+1F1E6 U+1F1EA',
