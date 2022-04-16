@@ -56,12 +56,13 @@ export default function SignUpForm(): JSX.Element {
          </InputGroup>
 
          <PasswordInput placeholder="Password" />
+
          <PasswordInput placeholder="Confirm Password" />
 
          <StyledMultipleElementsInOneLine>
             <NumberSelect type="Day" start={1} end={15} />
             <MonthSelect />
-            <NumberSelect type="Year" start={1920} end={2022} />
+            <NumberSelect type="Year" start={1969} end={2022} />
          </StyledMultipleElementsInOneLine>
 
          <Select placeholder="Gender" variant="filled">
@@ -100,6 +101,7 @@ export default function SignUpForm(): JSX.Element {
          <Button disabled={!validCaptcha} type="submit" colorScheme="purple">
             Register
          </Button>
+
          <p style={{ margin: 'auto' }}>
             Already have an account ? <StyledSpan>Sign In</StyledSpan>
          </p>

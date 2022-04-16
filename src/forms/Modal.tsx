@@ -7,7 +7,6 @@ import {
    ModalBody,
    ModalCloseButton,
    Button,
-   useDisclosure,
 } from '@chakra-ui/react';
 
 interface ModalProps {
