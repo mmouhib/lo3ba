@@ -19,3 +19,10 @@ export const StyledBirthdateSection = styled.div`
    align-items: center;
    justify-content: space-around;
 `;
+
+export const StyledTermsSpan = styled.span`
+   color: #3483e0;
+   &:hover {
+      text-decoration: underline;
+   }
+`;

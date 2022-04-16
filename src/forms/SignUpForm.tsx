@@ -3,12 +3,17 @@ import { EmailIcon } from '@chakra-ui/icons';
 import PasswordInput from './PasswordInput';
 import NumberSelect from './selects/NumberSelect';
 import MonthSelect from './selects/MonthSelect';
-import { StyledForm, StyledBirthdateSection } from '../StyledComponents/StyledSignUpForm';
+import {
+   StyledForm,
+   StyledBirthdateSection,
+   StyledTermsSpan,
+} from '../StyledComponents/StyledSignUpForm';
 import CountrySelect from './selects/CountriesSelect';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
 // @ts-ignore
 import ReCAPTCHA from 'react-google-recaptcha';
+import CoreModal from './Modal';
 
 function userNameGenerator(firstName: string, lastName: string): string[] {
    return [
@@ -22,9 +27,16 @@ function userNameGenerator(firstName: string, lastName: string): string[] {
 
 export default function SignUpForm(): JSX.Element {
    const [validCaptcha, setValidCaptcha] = useState<boolean>(false);
+   const [openModal, setOpenModal] = useState<boolean>(false);
+   const [selectedTerms, setSelectedTerms] = useState<boolean>(false);
 
    return (
       <StyledForm>
+         <CoreModal
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+            setSelectedTerms={setSelectedTerms}
+         />
          <Input variant="filled" placeholder="First Name" />
 
          <Input variant="filled" placeholder="Last Name" />
@@ -56,7 +68,23 @@ export default function SignUpForm(): JSX.Element {
          </Select>
 
          <CountrySelect />
-         <Checkbox defaultChecked>I accept Cookies & other storage access</Checkbox>
+
+         <Checkbox
+            style={{ margin: 'auto' }}
+            isChecked={selectedTerms}
+            onChange={() => {
+               setSelectedTerms(!selectedTerms);
+            }}>
+            I accept{' '}
+            <StyledTermsSpan
+               onClick={(e) => {
+                  e.preventDefault();
+                  setOpenModal(true);
+               }}>
+               Cookies & other Storage
+            </StyledTermsSpan>{' '}
+            Policy
+         </Checkbox>
 
          <ReCAPTCHA
             style={{ margin: 'auto' }}
