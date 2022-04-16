@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledForm = styled.form`
    display: flex;
    flex-direction: column;
-   gap: 1.2rem;
+   gap: 1rem;
    width: 100%;
    max-width: 500px;
    padding: 3rem;
@@ -12,7 +12,7 @@ export const StyledForm = styled.form`
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
-export const StyledBirthdateSection = styled.div`
+export const StyledMultipleElementsInOneLine = styled.div`
    width: 100%;
    gap: 1rem;
    display: flex;
@@ -20,9 +20,15 @@ export const StyledBirthdateSection = styled.div`
    justify-content: space-around;
 `;
 
-export const StyledTermsSpan = styled.span`
+export const StyledSpan = styled.span`
    color: #3483e0;
    &:hover {
       text-decoration: underline;
    }
+`;
+
+export const StyledP = styled.p`
+   font-weight: bold;
+   font-size: 1.5rem;
+   text-align: center;
 `;

@@ -6,7 +6,7 @@ import Logo from '../assets/logo.png';
 export default function SignUp(): JSX.Element {
    return (
       <StyledSignUp>
-         <StyledImage src={Logo} alt="logo" />
+         <StyledImage src={Logo} alt="logo" draggable="false" />
          <StyledVerticalLine />
          <SignUpForm />
       </StyledSignUp>

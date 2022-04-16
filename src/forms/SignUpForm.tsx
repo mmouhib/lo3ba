@@ -5,8 +5,9 @@ import NumberSelect from './selects/NumberSelect';
 import MonthSelect from './selects/MonthSelect';
 import {
    StyledForm,
-   StyledBirthdateSection,
-   StyledTermsSpan,
+   StyledMultipleElementsInOneLine,
+   StyledP,
+   StyledSpan,
 } from '../StyledComponents/StyledSignUpForm';
 import CountrySelect from './selects/CountriesSelect';
 import { useState } from 'react';
@@ -37,9 +38,11 @@ export default function SignUpForm(): JSX.Element {
             setOpenModal={setOpenModal}
             setSelectedTerms={setSelectedTerms}
          />
-         <Input variant="filled" placeholder="First Name" />
-
-         <Input variant="filled" placeholder="Last Name" />
+         <StyledP>Sign Up</StyledP>
+         <StyledMultipleElementsInOneLine>
+            <Input variant="filled" placeholder="First Name" />
+            <Input variant="filled" placeholder="Last Name" />
+         </StyledMultipleElementsInOneLine>
          <Input variant="filled" placeholder="username" />
 
          {/*<div>*/}
@@ -55,11 +58,11 @@ export default function SignUpForm(): JSX.Element {
          <PasswordInput placeholder="Password" />
          <PasswordInput placeholder="Confirm Password" />
 
-         <StyledBirthdateSection>
+         <StyledMultipleElementsInOneLine>
             <NumberSelect type="Day" start={1} end={15} />
             <MonthSelect />
             <NumberSelect type="Year" start={1920} end={2022} />
-         </StyledBirthdateSection>
+         </StyledMultipleElementsInOneLine>
 
          <Select placeholder="Gender" variant="filled">
             <option value="m">Male</option>
@@ -76,13 +79,13 @@ export default function SignUpForm(): JSX.Element {
                setSelectedTerms(!selectedTerms);
             }}>
             I accept{' '}
-            <StyledTermsSpan
+            <StyledSpan
                onClick={(e) => {
                   e.preventDefault();
                   setOpenModal(true);
                }}>
                Cookies & other Storage
-            </StyledTermsSpan>{' '}
+            </StyledSpan>{' '}
             Policy
          </Checkbox>
 
@@ -97,6 +100,9 @@ export default function SignUpForm(): JSX.Element {
          <Button disabled={!validCaptcha} type="submit" colorScheme="purple">
             Register
          </Button>
+         <p style={{ margin: 'auto' }}>
+            Already have an account ? <StyledSpan>Sign In</StyledSpan>
+         </p>
       </StyledForm>
    );
 }
