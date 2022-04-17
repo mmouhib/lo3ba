@@ -1,26 +1,16 @@
-import Search from './Search';
-import { Button } from '@chakra-ui/react';
-import React, { useEffect } from 'react';
-import { StyledTitle, StyledNavBar } from '../StyledComponents/Navbar';
-import axios, {AxiosResponse} from "axios";
+import styled from 'styled-components';
+// @ts-ignore
+import navLogo from '../assets/navLogo.png';
+import StyledNav from '../StyledComponents/navbar.css';
 
 export default function NavBar() {
-   // useEffect(() => {
-   //     axios
-   //         .get(`https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}`)
-   //         .then(function (response: AxiosResponse): void {
-   //             console.log(response.data);
-   //         });
-   // }, []);
-
    return (
-      <StyledNavBar>
-         <StyledTitle>lo3ba</StyledTitle>
-         <Search style={{ width: '25%' }} />
-         <div>
-            <Button colorScheme="blue">Login</Button>
-            <Button colorScheme="blue">sign Up</Button>
+      <StyledNav>
+         <img className="imageLogo" src={navLogo} alt="" />
+         <div className="nav-rightside">
+            {/*<a href="">Github</a>*/}
+            <button className="login-button">Log In</button>
          </div>
-      </StyledNavBar>
+      </StyledNav>
    );
 }

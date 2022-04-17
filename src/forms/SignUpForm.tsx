@@ -8,7 +8,7 @@ import {
    StyledMultipleElementsInOneLine,
    StyledP,
    StyledSpan,
-} from '../StyledComponents/StyledSignUpForm';
+} from '../StyledComponents/signupForm.css';
 import CountrySelect from './selects/CountriesSelect';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';

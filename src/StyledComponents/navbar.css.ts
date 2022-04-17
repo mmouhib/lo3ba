@@ -1,20 +1,36 @@
 import styled from 'styled-components';
 
-export const StyledNavBar = styled.div`
+const StyledNav = styled.nav`
+   position: fixed;
+   top: 0;
+   width: 65%;
+   padding: 10px;
+   transition: all 0.5s;
    display: flex;
-   gap: 10%;
    align-items: center;
    justify-content: space-between;
-   padding: 0.5%;
-   height: 7%;
-   background: rgba(187, 39, 39, 0.22);
-   box-shadow: 0 0 1000px 0 red;
+   font-family: 'soleil bold', serif;
+
+   .nav-rightside {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .login-button {
+      border: 2px solid #8d2cff;
+      color: #8d2cff;
+      width: 120px;
+      padding: 7px 7px 4px 7px;
+      margin: 3px;
+      border-radius: 3px;
+
+      &:hover {
+         transition: all 1s;
+         border-color: #58099b;
+         color: #58099b;
+      }
+   }
 `;
 
-export const StyledTitle = styled.p`
-   font-size: 2rem;
-   font-weight: bold;
-   color: white;
-   text-transform: uppercase;
-   cursor: pointer;
-`;
+export default StyledNav;

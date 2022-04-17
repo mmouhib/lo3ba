@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
-   user-select: none;
+   /*user-select: none;*/
 }
 
+@font-face {
+   font-family: 'soleil bold';
+   src: url('./fonts/SoleilBold.otf') format('truetype');
+}
+
+@font-face {
+   font-family: soleil;
+   src: url('./fonts/SoleilRegular.otf') format('truetype');
+}

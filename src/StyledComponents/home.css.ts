@@ -1,53 +1,67 @@
 import styled from 'styled-components';
 
-export const StyledHome = styled.div`
-   width: 100%;
-   height: 100%;
-   background: #251762;
-`;
-
-export const StyledHomeContent = styled.div`
+const StyledHome = styled.div`
+   width: 100vw;
+   height: 100vh;
    display: flex;
    align-items: center;
-   justify-content: space-around;
-   flex-direction: row;
-   height: 93%;
-`;
+   flex-direction: column;
+   padding-top: 10vh;
 
-export const StyledSloganDiv = styled.div`
-   width: 30%;
-  @media (max-width: 1200px) {
-    width: 100%;
-  }
-   & p {
-      color: white;
-      font-size: 5em;
-      font-family: 'Bebas Neue', cursive;
-      letter-spacing: 3px;
+   .slogans {
+      width: 55%;
+      text-align: center;
+      @media (max-width: 700px) {
+         width: 90%;
+      }
+   }
+
+   span {
+      color: #8d2cff;
+   }
+
+   .slogan-one {
+      font-size: 4vh;
+      font-family: 'soleil bold', serif;
       font-weight: bold;
       padding: 20px;
       width: fit-content;
       text-align: center;
-      text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
-      //text-shadow: black 15px 12px;
+      margin: auto;
+      text-transform: uppercase;
+   }
 
-      & span {
-         color: red;
+   .slogan-two {
+      font-size: 2.7vh;
+      letter-spacing: 1px;
+      font-family: soleil, serif;
+   }
+
+   .signup-button {
+      color: white;
+      font-weight: bold;
+      border: 2px solid #8d2cff;
+      background: #8d2cff;
+      width: 300px;
+      padding: 7px;
+      margin: 3vh;
+      border-radius: 4px;
+
+      &:hover {
+         transition: all 0.5s;
+         border-color: #7c32d2;
+         background: #7c32d2;
       }
    }
-`;
 
-export const StyledVerticalLine = styled.div`
-   border-left: 1px solid #ffffff;
-   height: 500px;
+   .login-phrase {
+      font-size: 1.7vh;
+   }
 
-   @media (max-width: 1200px) {
-      display: none;
+   .login-span:hover {
+      text-decoration: underline;
+      cursor: pointer;
    }
 `;
 
-export const StyledImage = styled.img`
-   @media (max-width: 1200px) {
-      display: none;
-   }
-`;
+export default StyledHome;
