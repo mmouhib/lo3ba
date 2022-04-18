@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const StyledNav = styled.nav`
    position: fixed;
+   background: white;
    top: 0;
    width: 65%;
    padding: 10px;

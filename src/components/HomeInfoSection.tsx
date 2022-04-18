@@ -7,14 +7,12 @@ const StyledInfoSection = styled.div`
    display: flex;
    align-items: center;
    justify-content: center;
-   //flex-direction: row;
-  flex-direction: column;
+   flex-direction: row;
    gap: 1.5vw;
-
-   //& img {
-   //   width: 100%;
-   //   height: 100%;
-   //}
+   margin-top: 3%;
+   @media (max-width: 1300px) {
+      flex-direction: column;
+   }
 
    .infos-content {
       width: 17vw;
@@ -56,24 +54,24 @@ export default function HomeInfoSection(): JSX.Element {
          <img src={illustration} alt="Illustration" />
 
          <MobileHomeInfoSection />
-         {/*<div className="infos-content">*/}
-         {/*   <div>*/}
-         {/*      <h1>find Video Games</h1>*/}
-         {/*      <p>search for your favourite video games and discover others</p>*/}
-         {/*   </div>*/}
-         {/*   <div>*/}
-         {/*      <h1>Bookmark your favourite Video Games</h1>*/}
-         {/*      <p>search for your favourite video games and discover others</p>*/}
-         {/*   </div>*/}
-         {/*   <div>*/}
-         {/*      <h1>Create your own world with us</h1>*/}
-         {/*      <p>sign up and add you favourite video games to your inventory</p>*/}
-         {/*   </div>*/}
-         {/*   <div>*/}
-         {/*      <h1>Broke? we got your back</h1>*/}
-         {/*      <p>find limited-time or permanently free video games that require 0$ to play</p>*/}
-         {/*   </div>*/}
-         {/*</div>*/}
+         <div className="infos-content">
+            <div>
+               <h1>find Video Games</h1>
+               <p>search for your favourite video games and discover others.</p>
+            </div>
+            <div>
+               <h1>Bookmark your favourite Video Games</h1>
+               <p>store your favourite games in your safe zone.</p>
+            </div>
+            <div>
+               <h1>Create your own world with us</h1>
+               <p>sign up and add you favourite video games to your inventory.</p>
+            </div>
+            <div>
+               <h1>Broke? we got your back</h1>
+               <p>find limited-time or permanently free video games that require 0$ to play.</p>
+            </div>
+         </div>
       </StyledInfoSection>
    );
 }
