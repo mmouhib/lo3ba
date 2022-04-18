@@ -43,7 +43,7 @@ const StyledHome = styled.div`
       border: 2px solid #8d2cff;
       background: #8d2cff;
       width: 15vw;
-     min-width: 160px;
+      min-width: 160px;
       padding: 7px;
       margin: 3vh;
       border-radius: 4px;
@@ -62,6 +62,12 @@ const StyledHome = styled.div`
    .login-span:hover {
       text-decoration: underline;
       cursor: pointer;
+   }
+
+   .login-modal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
    }
 `;
 

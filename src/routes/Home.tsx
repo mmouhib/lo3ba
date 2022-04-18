@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from '../components/NavBar';
 import StyledHome from '../StyledComponents/home.css';
 import HomeInfoSection from '../components/HomeInfoSection';
+import LoginModal from '../forms/LoginModal';
 
 export default function Home(): JSX.Element {
+   const [openModal, setOpenModal] = useState<boolean>(false);
+
    return (
       <StyledHome>
-         <NavBar />
+         <NavBar setOpenModal={setOpenModal} />
+         <LoginModal openModal={openModal} setOpenModal={setOpenModal} />
          <div className="slogans">
             <p className="slogan-one">
                Your favourite <span>Video Games</span>, All in one place
@@ -17,7 +21,14 @@ export default function Home(): JSX.Element {
             </p>
             <button className="signup-button">Sign Up, it's FREE !</button>
             <p className="login-phrase">
-               Already a Member? <span className="login-span">Log In</span>
+               Already a Member?{' '}
+               <span
+                  className="login-span"
+                  onClick={() => {
+                     setOpenModal(true);
+                  }}>
+                  Log In
+               </span>
             </p>
          </div>
          <HomeInfoSection />
