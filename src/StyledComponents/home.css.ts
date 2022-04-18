@@ -42,7 +42,8 @@ const StyledHome = styled.div`
       font-weight: bold;
       border: 2px solid #8d2cff;
       background: #8d2cff;
-      width: 300px;
+      width: 15vw;
+     min-width: 160px;
       padding: 7px;
       margin: 3vh;
       border-radius: 4px;
