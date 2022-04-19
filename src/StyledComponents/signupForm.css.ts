@@ -22,6 +22,7 @@ export const StyledMultipleElementsInOneLine = styled.div`
 
 export const StyledSpan = styled.span`
    color: #3483e0;
+   cursor: pointer;
    &:hover {
       text-decoration: underline;
    }

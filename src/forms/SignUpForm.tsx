@@ -15,6 +15,7 @@ import { Button } from '@chakra-ui/react';
 // @ts-ignore
 import ReCAPTCHA from 'react-google-recaptcha';
 import CoreModal from './Modal';
+import LoginModal from './LoginModal';
 
 function userNameGenerator(firstName: string, lastName: string): string[] {
    return [
@@ -30,6 +31,7 @@ export default function SignUpForm(): JSX.Element {
    const [validCaptcha, setValidCaptcha] = useState<boolean>(false);
    const [openModal, setOpenModal] = useState<boolean>(false);
    const [selectedTerms, setSelectedTerms] = useState<boolean>(false);
+   const [openLoginModal, setOpenLoginModal] = useState<boolean>(false);
 
    return (
       <StyledForm>
@@ -38,6 +40,7 @@ export default function SignUpForm(): JSX.Element {
             setOpenModal={setOpenModal}
             setSelectedTerms={setSelectedTerms}
          />
+         <LoginModal openModal={openLoginModal} setOpenModal={setOpenLoginModal} />
          <StyledP>Sign Up</StyledP>
          <StyledMultipleElementsInOneLine>
             <Input variant="filled" placeholder="First Name" />
@@ -103,7 +106,13 @@ export default function SignUpForm(): JSX.Element {
          </Button>
 
          <p style={{ margin: 'auto' }}>
-            Already have an account ? <StyledSpan>Sign In</StyledSpan>
+            Already have an account ?{' '}
+            <StyledSpan
+               onClick={() => {
+                  setOpenLoginModal(true);
+               }}>
+               Sign In
+            </StyledSpan>
          </p>
       </StyledForm>
    );

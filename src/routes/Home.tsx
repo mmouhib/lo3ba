@@ -3,9 +3,11 @@ import NavBar from '../components/NavBar';
 import StyledHome from '../StyledComponents/home.css';
 import HomeInfoSection from '../components/HomeInfoSection';
 import LoginModal from '../forms/LoginModal';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home(): JSX.Element {
    const [openModal, setOpenModal] = useState<boolean>(false);
+   let navigation = useNavigate();
 
    return (
       <StyledHome>
@@ -19,7 +21,13 @@ export default function Home(): JSX.Element {
                Search for, find and bookmark your favourite video games and discover Free to play
                games.
             </p>
-            <button className="signup-button">Sign Up, it's FREE !</button>
+            <button
+               className="signup-button"
+               onClick={() => {
+                  navigation('/signup');
+               }}>
+               Sign Up, it's FREE !
+            </button>
             <p className="login-phrase">
                Already a Member?{' '}
                <span
