@@ -12,6 +12,10 @@ const StyledNav = styled.nav`
    justify-content: space-between;
    font-family: 'soleil bold', serif;
 
+   @media (max-width: 1000px) {
+      width: 100%;
+   }
+
    .nav-rightside {
       display: flex;
       align-items: center;
