@@ -4,16 +4,16 @@ const StyledNav = styled.nav`
    position: fixed;
    background: white;
    top: 0;
-   width: 65%;
    padding: 10px;
-   transition: all 0.5s;
+   transition: all 0.7s;
    display: flex;
    align-items: center;
    justify-content: space-between;
    font-family: 'soleil bold', serif;
 
-   @media (max-width: 1000px) {
-      width: 100%;
+   @media (max-width: 700px) {
+      //width: 100%;
+      display: none;
    }
 
    .nav-rightside {
