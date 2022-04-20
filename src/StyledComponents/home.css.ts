@@ -16,6 +16,11 @@ const StyledHome = styled.div`
       }
    }
 
+   .slogan-one ::selection {
+      color: black;
+      background: #8d2cff;
+   }
+
    span {
       color: #8d2cff;
    }

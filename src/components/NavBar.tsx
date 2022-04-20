@@ -9,6 +9,8 @@ interface NavbarProps {
 
 export default function NavBar(props: NavbarProps) {
    const [scrolled, setScrolled] = useState<boolean>(false);
+   const [openThemeToggler, setOpenThemeToggler] = useState<boolean>(false);
+
    useEffect(() => {
       window.onscroll = function () {
          window.scrollY > 5 ? setScrolled(true) : setScrolled(false);
@@ -23,8 +25,14 @@ export default function NavBar(props: NavbarProps) {
          }}>
          <img className="imageLogo" src={navLogo} alt="" />
          <div className="nav-rightside">
-            <ThemeToggler />
-            {/*<a href="">Github</a>*/}
+            <p
+               className="theme-toggler"
+               onClick={() => {
+                  setOpenThemeToggler(!openThemeToggler);
+               }}>
+               Theme
+            </p>
+            {openThemeToggler && <ThemeToggler />}
             <button
                className="login-button"
                onClick={() => {

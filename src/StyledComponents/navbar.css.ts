@@ -10,6 +10,7 @@ const StyledNav = styled.nav`
    align-items: center;
    justify-content: space-between;
    font-family: 'soleil bold', serif;
+   height: 6vh;
 
    @media (max-width: 700px) {
       //width: 100%;
@@ -20,6 +21,7 @@ const StyledNav = styled.nav`
       display: flex;
       align-items: center;
       justify-content: center;
+     gap: 15px;
    }
 
    .login-button {
@@ -35,6 +37,11 @@ const StyledNav = styled.nav`
          border-color: #58099b;
          color: #58099b;
       }
+   }
+
+   & .theme-toggler {
+      cursor: pointer;
+      user-select: none;
    }
 `;
 
