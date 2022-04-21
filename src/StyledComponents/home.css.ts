@@ -7,7 +7,8 @@ const StyledHome = styled.div`
    align-items: center;
    flex-direction: column;
    padding-top: 10vh;
-
+   background: ${({ theme }) => theme.background};
+   color: ${({ theme }) => theme.mainTextColor};
    .slogans {
       width: 55%;
       text-align: center;
@@ -17,7 +18,7 @@ const StyledHome = styled.div`
    }
 
    .slogan-one ::selection {
-      color: black;
+      color: ${({ theme }) => theme.mainTextColor};
       background: #8d2cff;
    }
 

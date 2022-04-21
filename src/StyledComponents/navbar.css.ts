@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const StyledNav = styled.nav`
    position: fixed;
-   background: white;
    top: 0;
    padding: 10px;
    transition: all 0.7s;
@@ -11,9 +10,10 @@ const StyledNav = styled.nav`
    justify-content: space-between;
    font-family: 'soleil bold', serif;
    height: 6vh;
+   background: ${({ theme }) => theme.background};
+   color: ${({ theme }) => theme.mainTextColor};
 
    @media (max-width: 700px) {
-      //width: 100%;
       display: none;
    }
 
@@ -21,7 +21,7 @@ const StyledNav = styled.nav`
       display: flex;
       align-items: center;
       justify-content: center;
-     gap: 15px;
+      gap: 15px;
    }
 
    .login-button {
