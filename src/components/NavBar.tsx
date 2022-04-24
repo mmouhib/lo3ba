@@ -1,7 +1,7 @@
 import navLogo from '../assets/navLogo.png';
-import StyledNav from '../StyledComponents/navbar.css';
 import ThemeToggler from './ThemeToggler';
 import { useEffect, useState } from 'react';
+import '../styles/navbar.css';
 
 interface NavbarProps {
    setOpenModal: (arg: boolean) => void;
@@ -18,7 +18,8 @@ export default function NavBar(props: NavbarProps) {
    }, []);
 
    return (
-      <StyledNav
+      <nav
+         className="nav"
          style={{
             width: scrolled ? '100vw' : '60%',
             boxShadow: scrolled ? '1px 4px 10px 4px rgba(0, 0, 255, 0.2)' : 'none',
@@ -41,6 +42,6 @@ export default function NavBar(props: NavbarProps) {
                Log In
             </button>
          </div>
-      </StyledNav>
+      </nav>
    );
 }

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import StyledMobileHomeInfoSection from '../StyledComponents/mobileHomeInfoSection.css';
+import '../styles/mobile-home-info-selection.css';
 
 export default function MobileHomeInfoSection(): JSX.Element {
    const [displayDots, setDisplayDots] = useState<boolean[]>([true, false, false, false]);
 
    return (
-      <StyledMobileHomeInfoSection>
+      <div className="mobile-home-info-selection">
          <div>
             <div style={{ display: displayDots[0] ? 'block' : 'none' }}>
                <h1>find Video Games</h1>
@@ -46,6 +46,6 @@ export default function MobileHomeInfoSection(): JSX.Element {
                );
             })}
          </div>
-      </StyledMobileHomeInfoSection>
+      </div>
    );
 }

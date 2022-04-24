@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import NavBar from '../components/NavBar';
-import StyledHome from '../StyledComponents/home.css';
 import HomeInfoSection from '../components/HomeInfoSection';
-import LoginModal from '../forms/LoginModal';
+import LoginModal from '../components/forms/LoginModal';
 import { useNavigate } from 'react-router-dom';
+import '../styles/home.css';
 
 export default function Home(): JSX.Element {
    const [openModal, setOpenModal] = useState<boolean>(false);
    let navigation = useNavigate();
 
    return (
-      <StyledHome>
+      <div className="home">
          <NavBar setOpenModal={setOpenModal} />
          <LoginModal openModal={openModal} setOpenModal={setOpenModal} />
          <div className="slogans">
@@ -40,6 +40,6 @@ export default function Home(): JSX.Element {
             </p>
          </div>
          <HomeInfoSection />
-      </StyledHome>
+      </div>
    );
 }

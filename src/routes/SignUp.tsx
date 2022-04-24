@@ -1,14 +1,13 @@
-import SignUpForm from '../forms/SignUpForm';
-import { StyledImage, SignupCss, StyledVerticalLine } from '../StyledComponents/signup.css';
-// @ts-ignore
+import SignUpForm from '../components/forms/SignUpForm';
 import Logo from '../assets/logo.png';
+import '../styles/signup.css';
 
 export default function SignUp(): JSX.Element {
    return (
-      <SignupCss>
-         <StyledImage src={Logo} alt="logo" draggable="false" />
-         <StyledVerticalLine />
+      <div className="sign-up">
+         <img className="signup-logo" src={Logo} alt="logo" draggable="false" />
+         <div className="vertical-line" />
          <SignUpForm />
-      </SignupCss>
+      </div>
    );
 }

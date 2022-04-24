@@ -1,0 +1,43 @@
+.home-info-section {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: row;
+   gap: 1.5vw;
+   margin-top: 3%;
+}
+
+@media (max-width: 1300px) {
+   .home-info-section {
+      flex-direction: column;
+   }
+
+   .home-info-section .infos-content {
+      display: none;
+   }
+}
+
+.infos-content {
+   width: 17vw;
+   height: 50vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 6%;
+}
+
+.infos-content h1 {
+   font-size: 1em;
+   text-transform: uppercase;
+   font-weight: bolder;
+}
+
+.infos-content p {
+   font-size: 1em;
+}
+
+.infos-content ::selection {
+   color: white;
+   background: #8d2cff;
+}

@@ -1,7 +1,7 @@
 import illustration from '../assets/illustration.png';
 import React from 'react';
 import MobileHomeInfoSection from './MobileHomeInfoSection';
-import StyledInfoSection from '../StyledComponents/homeInfoSection.css';
+import '../styles/home-info-section.css';
 
 export default function HomeInfoSection(): JSX.Element {
    return (
@@ -10,7 +10,7 @@ export default function HomeInfoSection(): JSX.Element {
        * with the carousel effect instead of the rest of the JSX
        */
 
-      <StyledInfoSection>
+      <div className="home-info-section">
          <img src={illustration} alt="Illustration" />
 
          <MobileHomeInfoSection />
@@ -32,6 +32,6 @@ export default function HomeInfoSection(): JSX.Element {
                <p>find limited-time or permanently free video games that require 0$ to play.</p>
             </div>
          </div>
-      </StyledInfoSection>
+      </div>
    );
 }

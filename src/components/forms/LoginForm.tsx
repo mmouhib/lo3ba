@@ -1,11 +1,11 @@
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import { EmailIcon } from '@chakra-ui/icons';
 import PasswordInput from './PasswordInput';
-import { StyledLoginForm } from '../StyledComponents/loginForm.css';
+import '../../styles/login-form.css';
 
 export default function LoginForm(): JSX.Element {
    return (
-      <StyledLoginForm>
+      <form className="login-form">
          <div>
             <InputGroup>
                <InputLeftElement pointerEvents="none" children={<EmailIcon color="gray.300" />} />
@@ -13,6 +13,6 @@ export default function LoginForm(): JSX.Element {
             </InputGroup>
             <PasswordInput placeholder="Password" />
          </div>
-      </StyledLoginForm>
+      </form>
    );
 }

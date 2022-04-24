@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-const StyledThemeToggler = styled.div`
+.theme-toggler-menu {
    position: absolute;
    top: 6.5vh;
    right: 7vw;
@@ -16,21 +14,19 @@ const StyledThemeToggler = styled.div`
    gap: 10px;
    color: #8d2cff;
    user-select: none;
+}
 
-   & div {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: start;
-      gap: 10px;
-      padding: 15px;
-      border-radius: 10px;
-      width: 100%;
-   }
+.theme-toggler-menu div {
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   gap: 10px;
+   padding: 15px;
+   border-radius: 10px;
+   width: 100%;
+}
 
-   & div:hover {
-      background: #eeeeee;
-   }
-`;
-
-export default StyledThemeToggler;
+.theme-toggler-menu div:hover {
+   background: #eeeeee;
+}

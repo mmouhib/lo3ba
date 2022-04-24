@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-export const SignupCss = styled.div`
+.sign-up {
    width: 100vw;
    height: 100vh;
    display: flex;
@@ -8,19 +6,18 @@ export const SignupCss = styled.div`
    justify-content: space-around;
    flex-direction: row;
    background: #38185e;
-`;
+}
 
-export const StyledVerticalLine = styled.div`
+.vertical-line {
    border-left: 1px solid #ffffff;
    height: 500px;
+}
 
-   @media (max-width: 1200px) {
+@media (max-width: 1200px) {
+   .vertical-line {
       display: none;
    }
-`;
-
-export const StyledImage = styled.img`
-   @media (max-width: 1200px) {
+   .signup-logo {
       display: none;
    }
-`;
+}
