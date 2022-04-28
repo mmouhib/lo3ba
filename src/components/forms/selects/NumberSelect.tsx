@@ -5,6 +5,7 @@ interface NumberSelectProps {
    start: number;
    end: number;
    type: string;
+   setValue: (arg: string) => void;
 }
 
 export default function NumberSelect(props: NumberSelectProps) {
@@ -16,7 +17,12 @@ export default function NumberSelect(props: NumberSelectProps) {
    }, []);
 
    return (
-      <Select placeholder={props.type} variant="filled">
+      <Select
+         placeholder={props.type}
+         variant="filled"
+         onChange={(e) => {
+            props.setValue(e.target.value);
+         }}>
          {intervalArray.map((element, index) => (
             <option key={element} value={element + 1}>
                {element + 1}

@@ -4,6 +4,8 @@ import { LockIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
 interface PasswordInputProps {
    placeholder: string;
+   value?: string;
+   onChange?: (e: any) => void;
 }
 
 export default function PasswordInput(props: PasswordInputProps): JSX.Element {
@@ -17,6 +19,8 @@ export default function PasswordInput(props: PasswordInputProps): JSX.Element {
             pr="4.5rem"
             type={show ? 'text' : 'password'}
             placeholder={props.placeholder}
+            value={props.value}
+            onChange={props.onChange}
          />
          <InputRightElement width="4.5rem">
             <Button

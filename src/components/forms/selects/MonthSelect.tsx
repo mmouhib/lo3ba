@@ -1,6 +1,10 @@
 import { Select } from '@chakra-ui/react';
 
-export default function MonthSelect() {
+interface CountrySelectProps {
+   setValue: (arg: string) => void;
+}
+
+export default function MonthSelect(props: CountrySelectProps) {
    const longMonths: string[] = [
       'January',
       'February',
@@ -31,7 +35,12 @@ export default function MonthSelect() {
    ];
 
    return (
-      <Select placeholder="Month" variant="filled">
+      <Select
+         placeholder="Month"
+         variant="filled"
+         onChange={(e) => {
+            props.setValue(e.target.value);
+         }}>
          {longMonths.map((element, index) => (
             <option key={index} value={index + 1}>
                {element}
