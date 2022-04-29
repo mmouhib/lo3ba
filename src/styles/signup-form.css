@@ -9,6 +9,7 @@
    background-color: #fafafa;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
    min-height: 700px;
+   text-align: center;
 }
 
 @media (max-height: 900px) {
@@ -17,14 +18,6 @@
       height: 82vh;
       padding: 1.5rem;
    }
-}
-
-.one-line-inputs {
-   width: 100%;
-   gap: 1rem;
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
 }
 
 .sign-up-form-spans {
@@ -36,8 +29,19 @@
    text-decoration: underline;
 }
 
-.sign-up-form-phrase {
+.sign-up-form-title {
    font-weight: bold;
    font-size: 1.5rem;
    text-align: center;
+}
+
+.signup-form-checkbox {
+   margin: auto;
+}
+
+.same-line {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 5%;
 }

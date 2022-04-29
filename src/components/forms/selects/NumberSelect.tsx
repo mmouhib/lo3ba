@@ -11,7 +11,7 @@ interface NumberSelectProps {
 export default function NumberSelect(props: NumberSelectProps) {
    const [intervalArray, setIntervalArray] = useState<number[]>([]);
    useEffect(() => {
-      for (let i: number = props.start; i < props.end + 2; i++) {
+      for (let i: number = props.start - 1; i < props.end; i++) {
          setIntervalArray((prev) => [...prev, i]);
       }
    }, []);
