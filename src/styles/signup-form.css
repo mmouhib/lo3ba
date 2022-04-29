@@ -8,6 +8,15 @@
    border-radius: 10px;
    background-color: #fafafa;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   min-height: 700px;
+}
+
+@media (max-height: 900px) {
+   .sign-up-form {
+      gap: 0.7rem;
+      height: 82vh;
+      padding: 1.5rem;
+   }
 }
 
 .one-line-inputs {
