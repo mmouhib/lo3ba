@@ -14,9 +14,7 @@
 
 @media (max-height: 900px) {
    .sign-up-form {
-      gap: 0.7rem;
-      height: 82vh;
-      padding: 1.5rem;
+      height: 70vh;
    }
 }
 
@@ -36,7 +34,7 @@
 }
 
 .signup-form-checkbox {
-   margin: auto;
+   margin: 0 auto 0 auto;
 }
 
 .same-line {

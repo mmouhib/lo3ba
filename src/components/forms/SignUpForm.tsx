@@ -1,33 +1,54 @@
 import '../../styles/signup-form.css';
 import React, { useEffect, useState } from 'react';
-import { Button, Checkbox, Input, InputGroup, InputLeftElement, InputRightElement, Select } from '@chakra-ui/react';
+import { Button, Checkbox, Input, InputGroup, InputLeftElement, InputRightElement, Select, useToast } from '@chakra-ui/react';
 // @ts-ignore
 import ReCAPTCHA from 'react-google-recaptcha';
 import CoreModal from './Modal';
 import LoginModal from './LoginModal';
-import AlertPopup from '../AlertPopup';
 import { EmailIcon, LockIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import PasswordInput from './PasswordInput';
-import NumberSelect from './selects/NumberSelect';
-import MonthSelect from './selects/MonthSelect';
-import CountrySelect from './selects/CountriesSelect';
-import GenderSelect from './selects/GenderSelect';
 import { useFormik } from 'formik';
+import Countries from '../../Countries';
+
+interface IBirthdate {
+   day: string;
+   month: string;
+   year: string;
+}
+
+const arrayRange = (start: number, end: number): number[] => {
+   let arr: number[] = [];
+   for (let i: number = start - 1; i < end; i++) {
+      arr.push(i);
+   }
+   return arr;
+};
 
 export default function SignUpForm(): JSX.Element {
-   const [validCaptcha, setValidCaptcha] = useState<boolean>(false);
-   const [dayInterval, setDayInterval] = useState<number[]>([]);
-   const [yearInterval, setYearInterval] = useState<number[]>([]);
-   useEffect(() => {
-      for (let i: number = 0; i < 31; i++) {
-         setDayInterval((prev) => [...prev, i]);
-      }
-      for (let i: number = 0; i < new Date().getFullYear() + 1; i++) {
-         setYearInterval((prev) => [...prev, i]);
-      }
-   }, []);
-
+   const [error, setError] = useState<boolean>(false);
    const [show, setShow] = useState(false);
+   const [validCaptcha, setValidCaptcha] = useState<boolean>(false);
+   const [birthdate, setBirthdate] = useState<IBirthdate>({ day: '', month: '', year: '' });
+   const [country, setCountry] = useState<string>('');
+   const [gender, setGender] = useState<string>('');
+   const [checkedTerms, setCheckedTerms] = useState<boolean>(false);
+   const [openModal, setOpenModal] = useState<boolean>(false);
+   const [openLoginModal, setOpenLoginModal] = useState<boolean>(false);
+
+   const longMonths: string[] = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+   ];
+   const shortMonths: string[] = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
    const formik = useFormik({
       initialValues: {
@@ -37,13 +58,6 @@ export default function SignUpForm(): JSX.Element {
          email: '',
          password: '',
          confirmPassword: '',
-         day: '',
-         month: '',
-         year: '',
-         country: '',
-         gender: '',
-         terms: false,
-         captcha: false,
       },
 
       onSubmit: (values) => {
@@ -51,15 +65,112 @@ export default function SignUpForm(): JSX.Element {
       },
    });
 
-   useEffect(() => {
-      console.log(formik.values);
-   }, [formik.values]);
+   const toast = useToast();
+
+   const submitControl = (): void => {
+      if (!formik.values.firstName) {
+         toast({
+            title: 'An error has occurred.',
+            description: 'First name must not be empty',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+         });
+         setError(true);
+      } else if (!formik.values.lastName) {
+         toast({
+            title: 'An error has occurred.',
+            description: 'last name must not be empty',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+         });
+         setError(true);
+      } else if (!formik.values.userName) {
+         toast({
+            title: 'An error has occurred.',
+            description: 'User name must not be empty',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+         });
+         setError(true);
+      } else if (
+         !formik.values.email
+            .toLowerCase()
+            .match(
+               /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            )
+      ) {
+         toast({
+            title: 'An error has occurred.',
+            description: 'Incorrect email',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+         });
+         setError(true);
+      } else if (formik.values.password.length < 6) {
+         toast({
+            title: 'An error has occurred.',
+            description: 'Password must contain 6 indexes',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+         });
+         setError(true);
+      } else if (formik.values.confirmPassword !== formik.values.password) {
+         toast({
+            title: 'An error has occurred.',
+            description: 'Password confirmation must be the same as the password',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+         });
+         setError(true);
+      } else if (birthdate.day.length === 0 || birthdate.month.length === 0 || birthdate.year.length === 0) {
+         toast({
+            title: 'An error has occurred.',
+            description: 'Please select a valid birthdate',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+         });
+         setError(true);
+      } else if (country.toString() === '') {
+         toast({
+            title: 'An error has occurred.',
+            description: 'Please select a country',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+         });
+         setError(true);
+      } else if (gender.toString() === '') {
+         toast({
+            title: 'An error has occurred.',
+            description: 'Please select a gender',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+         });
+         setError(true);
+      } else if (!checkedTerms) {
+         toast({
+            title: 'An error has occurred.',
+            description: 'Please accept our site policy',
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+         });
+         setError(true);
+      }
+   };
 
    return (
       <form className="sign-up-form" onSubmit={formik.handleSubmit}>
-         {/*<AlertPopup />*/}
-         {/*<CoreModal openModal={openModal} setOpenModal={setOpenModal} setSelectedTerms={setSelectedTerms} />*/}
-         {/*<LoginModal openModal={openLoginModal} setOpenModal={setOpenLoginModal} />*/}
+         <CoreModal openModal={openModal} setOpenModal={setOpenModal} />
+         <LoginModal openModal={openLoginModal} setOpenModal={setOpenLoginModal} />
 
          <p className="sign-up-form-title">Sign Up</p>
 
@@ -75,7 +186,7 @@ export default function SignUpForm(): JSX.Element {
             />
             <Input
                type="text"
-               placeholder="First name"
+               placeholder="Last name"
                focusBorderColor="purple.500"
                id="lastName"
                name="lastName"
@@ -85,7 +196,7 @@ export default function SignUpForm(): JSX.Element {
          </div>
          <Input
             type="text"
-            placeholder="First name"
+            placeholder="Username"
             focusBorderColor="purple.500"
             id="userName"
             name="userName"
@@ -118,9 +229,10 @@ export default function SignUpForm(): JSX.Element {
                   value={formik.values.password}
                   onChange={formik.handleChange}
                />
-               <InputRightElement width="4.5rem">
+               <InputRightElement width="3.5rem">
                   <Button
-                     h="1.75rem"
+                     h="1.5rem"
+                     w="5%"
                      onClick={() => {
                         setShow(!show);
                      }}>
@@ -134,15 +246,16 @@ export default function SignUpForm(): JSX.Element {
                   focusBorderColor="purple.500"
                   pr="4.5rem"
                   type={show ? 'text' : 'password'}
-                  placeholder="confirm"
+                  placeholder="confirm pwd"
                   id="confirmPassword"
                   name="confirmPassword"
                   value={formik.values.confirmPassword}
                   onChange={formik.handleChange}
                />
-               <InputRightElement width="4.5rem">
+               <InputRightElement width="3.5rem">
                   <Button
-                     h="1.75rem"
+                     h="1.5rem"
+                     w="5%"
                      onClick={() => {
                         setShow(!show);
                      }}>
@@ -153,33 +266,79 @@ export default function SignUpForm(): JSX.Element {
          </div>
 
          <div className="same-line">
-            <Select placeholder="day">
-               {dayInterval.map((element, index) => (
+            <Select
+               placeholder="day"
+               onChange={(e) => {
+                  setBirthdate({ ...birthdate, day: e.target.value });
+               }}>
+               {arrayRange(1, 31).map((element, index) => (
                   <option key={element} value={element + 1}>
                      {element + 1}
                   </option>
                ))}
             </Select>
-            <MonthSelect />
-            <Select placeholder="day">
-               {yearInterval.map((element, index) => (
+
+            <Select
+               placeholder="Month"
+               onChange={(e) => {
+                  setBirthdate({ ...birthdate, month: e.target.value });
+               }}>
+               {longMonths.map((element, index) => (
+                  <option key={index} value={index + 1}>
+                     {element}
+                  </option>
+               ))}
+            </Select>
+
+            <Select
+               placeholder="year"
+               onChange={(e) => {
+                  setBirthdate({ ...birthdate, year: e.target.value });
+               }}>
+               {arrayRange(1950, 2020).map((element, index) => (
                   <option key={element} value={element + 1}>
                      {element + 1}
                   </option>
                ))}
             </Select>
-         </div>
-         <div className="same-line">
-            <CountrySelect />
-            <GenderSelect />
          </div>
 
-         <Checkbox className="signup-form-checkbox">
+         <div className="same-line">
+            <Select
+               placeholder="Country"
+               onChange={(e) => {
+                  setCountry(e.target.value);
+               }}>
+               {Countries.map((element, index) => (
+                  <option key={index} value={element.name}>
+                     {element.emoji} - {element.name}
+                  </option>
+               ))}
+            </Select>
+
+            <Select
+               placeholder="Gender"
+               onChange={(e) => {
+                  setGender(e.target.value);
+               }}>
+               <option value="m">Male</option>
+               <option value="f">Female</option>
+               <option value="o">Other</option>
+            </Select>
+         </div>
+
+         <Checkbox
+            className="signup-form-checkbox"
+            isChecked={checkedTerms}
+            onChange={(e) => {
+               setCheckedTerms(!checkedTerms);
+            }}>
             I accept{' '}
             <span
                className="sign-up-form-spans"
                onClick={(e) => {
-                  e.preventDefault();
+                  // e.preventDefault();
+                  setOpenModal(true);
                }}>
                Cookies & other Storage
             </span>{' '}
@@ -187,14 +346,14 @@ export default function SignUpForm(): JSX.Element {
          </Checkbox>
 
          <ReCAPTCHA
-            style={{ margin: 'auto' }}
+            style={{ margin: '0 auto' }}
             sitekey={process.env.REACT_APP_CAPTCHA_KEY}
             onChange={(value: string) => {
                value !== null ? setValidCaptcha(true) : setValidCaptcha(false);
             }}
          />
 
-         <Button type="submit" colorScheme="purple">
+         <Button type="submit" colorScheme="purple" onClick={submitControl}>
             Register
          </Button>
 
