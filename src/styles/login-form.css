@@ -2,12 +2,21 @@
    display: flex;
    align-items: center;
    justify-content: center;
+   flex-direction: column;
+   gap: 3vh;
+   padding: 2rem;
+   border-radius: 10px;
+   background-color: #fafafa;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   height: 50vh;
+   min-height: 400px;
+   width: 20vw;
+   min-width: 360px;
 }
 
-.login-form div {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
-   gap: 1vh;
+.log-in-form-title {
+   font-weight: bold;
+   font-size: 1.2rem;
+   text-align: center;
 }

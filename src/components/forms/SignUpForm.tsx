@@ -15,6 +15,10 @@ interface IBirthdate {
    year: string;
 }
 
+interface SignUpFormProps {
+   setForm: (arg: boolean) => void;
+}
+
 const arrayRange = (start: number, end: number): number[] => {
    let arr: number[] = [];
    for (let i: number = start - 1; i < end; i++) {
@@ -23,9 +27,9 @@ const arrayRange = (start: number, end: number): number[] => {
    return arr;
 };
 
-export default function SignUpForm(): JSX.Element {
+export default function SignUpForm(props: SignUpFormProps): JSX.Element {
    const [error, setError] = useState<boolean>(false);
-   const [show, setShow] = useState(false);
+   const [show, setShow] = useState<boolean>(false);
    const [validCaptcha, setValidCaptcha] = useState<boolean>(false);
    const [birthdate, setBirthdate] = useState<IBirthdate>({ day: '', month: '', year: '' });
    const [country, setCountry] = useState<string>('');
@@ -358,7 +362,14 @@ export default function SignUpForm(): JSX.Element {
          </Button>
 
          <p>
-            Already have an account ? <span className="sign-up-form-spans">Sign In</span>
+            Already have an account ?{' '}
+            <span
+               className="sign-up-form-spans"
+               onClick={() => {
+                  props.setForm(false);
+               }}>
+               Sign In
+            </span>
          </p>
       </form>
    );

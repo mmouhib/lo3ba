@@ -1,7 +1,7 @@
 import Home from './routes/Home';
 import { SearchContextProvider } from './context/SearchContext';
 import { Route, Routes } from 'react-router-dom';
-import SignUp from './routes/SignUp';
+import AuthPage from './routes/AuthPage';
 import { ThemeProvider } from 'styled-components';
 import { IThemeContext, themeContext } from './context/ThemeContext';
 import { useContext } from 'react';
@@ -17,7 +17,7 @@ export default function App(): JSX.Element {
             <SearchContextProvider>
                <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/signup" element={<SignUp />} />
+                  <Route path="/signup" element={<AuthPage />} />
                </Routes>
             </SearchContextProvider>
          </div>

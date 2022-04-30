@@ -21,3 +21,23 @@
       display: none;
    }
 }
+
+.form-switch-section {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 5%;
+}
+.form-switch-section .switch-labels {
+   color: white;
+}
+
+.form-switch-div {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   gap: 15%;
+   margin-bottom: 10px;
+}
