@@ -5,7 +5,7 @@ import AuthPage from './routes/AuthPage';
 import { ThemeProvider } from 'styled-components';
 import { IThemeContext, themeContext } from './context/ThemeContext';
 import { useContext } from 'react';
-import GamePage from './components/GamePage';
+import GamePage from './components/GameStats/GamePage';
 
 const lightTheme = { background: '#ffffff', mainTextColor: '#black' };
 const darkTheme = { background: '#181a1b', mainTextColor: '#ffffff' };
