@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import '../../styles/GameStats/game-page.css';
 import Reviews from './Reviews';
+import GameStores from './GameStores';
 
 export default function GamePage(): JSX.Element {
    const [loaded, setLoaded] = useState<boolean>(false);
@@ -11,7 +12,7 @@ export default function GamePage(): JSX.Element {
       axios
          .get(`https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}`)
          .then((response: AxiosResponse): void => {
-            setGame(response.data.results[16]);
+            setGame(response.data.results[15]);
             setLoaded(true);
          });
    }, []);
@@ -21,16 +22,19 @@ export default function GamePage(): JSX.Element {
          {loaded && (
             <>
                <div className="image-container">
-                  <img src={game.background_image} alt={game.name} />
+                  <img className="game-page-background" src={game.background_image} alt={game.name} />
                </div>
                <div className="content">
                   <div className="banner">
+                     <img className="banner-image" src={game.background_image} alt="not found" />
+                     <h1 className="banner-game-title">{game.name}</h1>
                      <Reviews
                         greatReviewsCount={game.ratings[0].count}
                         goodReviewsCount={game.ratings[1].count}
                         mehReviewsCount={game.ratings[2].count}
                         badReviewsCount={game.ratings[3].count}
                      />
+                     <GameStores gameId={game.id} />
                   </div>
                </div>
             </>

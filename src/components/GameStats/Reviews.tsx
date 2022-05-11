@@ -15,24 +15,24 @@ export default function Reviews(props: ReviewsProps) {
    return (
       <div className="reviews-component">
          <div className="review-type">
-            <RiStarSmileLine size={22} />
-            <span>{props.greatReviewsCount}</span>
-            <span>great</span>
+            <RiStarSmileLine size={20} />
+            <span className="rating-count">{props.greatReviewsCount}</span>
+            <span className="review-title">great</span>
          </div>
          <div className="review-type">
-            <BiHappyAlt size={22} />
-            <span>{props.goodReviewsCount}</span>
-            <span>good</span>
+            <BiHappyAlt size={20} />
+            <span className="rating-count">{props.goodReviewsCount}</span>
+            <span className="review-title">good</span>
          </div>
          <div className="review-type">
-            <CgSmileNone size={22} />
-            <span>{props.mehReviewsCount}</span>
-            <span>meh</span>
+            <CgSmileNone size={20} />
+            <span className="rating-count">{props.mehReviewsCount}</span>
+            <span className="review-title">meh</span>
          </div>
          <div className="review-type">
-            <FaRegSadTear size={22} />
-            <span>{props.badReviewsCount}</span>
-            <span>skip</span>
+            <FaRegSadTear size={20} />
+            <span className="rating-count">{props.badReviewsCount}</span>
+            <span className="review-title">skip</span>
          </div>
       </div>
    );
