@@ -3,22 +3,26 @@ import axios, { AxiosResponse } from 'axios';
 import '../../styles/GameStats/game-page.css';
 import Reviews from './Reviews';
 import GameStores from './GameStores';
+import { useParams } from 'react-router-dom';
 
 export default function GamePage(): JSX.Element {
    const [loaded, setLoaded] = useState<boolean>(false);
    const [game, setGame] = useState<any>({});
 
+   let { id } = useParams();
+
    useEffect(() => {
       axios
-         .get(`https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}`)
+         .get(`https://api.rawg.io/api/games/${id}?key=${process.env.REACT_APP_API_KEY}`)
          .then((response: AxiosResponse): void => {
-            setGame(response.data.results[15]);
+            setGame(response.data);
             setLoaded(true);
          });
    }, []);
 
    return (
       <div className="game-page-component">
+         <div>{game.metacritic}</div>
          {loaded && (
             <>
                <div className="image-container">

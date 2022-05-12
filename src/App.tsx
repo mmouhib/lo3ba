@@ -19,7 +19,7 @@ export default function App(): JSX.Element {
                <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/signup" element={<AuthPage />} />
-                  <Route path="/game" element={<GamePage />} />
+                  <Route path="/game/:id" element={<GamePage />} />
                </Routes>
             </SearchContextProvider>
          </div>

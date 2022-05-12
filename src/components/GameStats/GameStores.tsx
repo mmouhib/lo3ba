@@ -14,9 +14,18 @@ export default function GameStores(props: GameStoresProps) {
          .get(`https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}`)
          .then((response: AxiosResponse): void => {
             setResults(response.data.results[15]);
-            // setLoaded(true);
          });
    }, []);
 
-   return <div className="game-stores"></div>;
+   return (
+      <div className="game-stores">
+         <div className="store-button">Steam</div>
+         <div className="store-button">Steam</div>
+         <div className="store-button">Steam</div>
+         <div className="store-button">Steam</div>
+         <div className="store-button">Steam</div>
+         <div className="store-button">Steam</div>
+         <div className="store-button">Steam</div>
+      </div>
+   );
 }

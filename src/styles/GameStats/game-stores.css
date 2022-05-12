@@ -1,0 +1,20 @@
+.game-stores {
+   width: 100%;
+   height: 30%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 5%;
+}
+
+.store-button {
+   width: 40%;
+   height: 40px;
+   background: #2d2d2d;
+   color: #b2b2b2;
+   border-radius: 6px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
