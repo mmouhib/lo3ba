@@ -1,0 +1,25 @@
+.store-button {
+   width: 30%;
+   height: 40px;
+   min-width: 160px;
+   background: #2d2d2d;
+   color: #b2b2b2;
+   border-radius: 4px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: bold;
+   font-size: 70%;
+}
+
+.store-button .store-logo {
+   height: 60%;
+}
+
+.store-button-content {
+   width: 80%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}

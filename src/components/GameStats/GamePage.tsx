@@ -22,7 +22,6 @@ export default function GamePage(): JSX.Element {
 
    return (
       <div className="game-page-component">
-         <div>{game.metacritic}</div>
          {loaded && (
             <>
                <div className="image-container">
