@@ -24,12 +24,20 @@ export default function GamePage(): JSX.Element {
       <div className="game-page-component">
          {loaded && (
             <>
-               <div className="image-container">
+               <div className="game-page-image-container">
                   <img className="game-page-background" src={game.background_image} alt={game.name} />
                </div>
-               <div className="content">
-                  <div className="banner">
-                     <img className="banner-image" src={game.background_image} alt="not found" />
+               <div className="game-page-content">
+                  <div className="game-page-banner">
+                     <img
+                        className="banner-image"
+                        src={
+                           game.background_image_additional
+                              ? game.background_image_additional
+                              : game.background_image
+                        }
+                        alt="game avatar"
+                     />
                      <h1 className="banner-game-title">{game.name}</h1>
                      <Reviews
                         greatReviewsCount={game.ratings[0].count}
@@ -38,6 +46,9 @@ export default function GamePage(): JSX.Element {
                         badReviewsCount={game.ratings[3].count}
                      />
                      <GameStores gameId={game.id} />
+                  </div>
+                  <div className="banner-details">
+                     <div>{game.description}</div>
                   </div>
                </div>
             </>

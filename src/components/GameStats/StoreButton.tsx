@@ -21,7 +21,6 @@ const getStoreIcon = (name: string) => {
    if (name.toLowerCase().includes('xbox')) {
       return xbox;
    }
-
    if (name.toLowerCase().includes('google')) {
       return googlePlay;
    }

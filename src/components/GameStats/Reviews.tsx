@@ -4,6 +4,13 @@ import { RiStarSmileLine } from 'react-icons/ri';
 import { CgSmileNone } from 'react-icons/cg';
 import { FaRegSadTear } from 'react-icons/fa';
 
+interface IGameRatings {
+   id: number;
+   title: string;
+   count: number;
+   percent: number;
+}
+
 interface ReviewsProps {
    greatReviewsCount: number;
    goodReviewsCount: number;
