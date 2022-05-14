@@ -25,42 +25,12 @@
 .game-page-content {
    z-index: 100;
    color: white;
-   width: 70%;
+   width: 69%;
    height: 100%;
    display: flex;
    align-items: center;
    justify-content: center;
    flex-direction: row;
    gap: 3%;
-   /*border: 3px solid white;*/
 }
 
-.game-page-banner {
-   /*border-right: 1px solid white;*/
-   width: 30%;
-   height: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: start;
-   gap: 3%;
-   flex-direction: column;
-}
-
-.banner-game-title {
-   font-weight: bolder;
-   margin-bottom: 15px;
-}
-
-.banner-image {
-   object-fit: cover;
-   width: 210px;
-   height: 210px;
-   min-width: 210px;
-   min-height: 210px;
-   border-radius: 100%;
-   margin-top: 10%;
-}
-
-.banner-details {
-   width: 70%;
-}

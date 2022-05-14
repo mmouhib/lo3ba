@@ -1,0 +1,15 @@
+.game-page-details {
+   width: 70%;
+   height: 100%;
+   margin-top: 15%;
+}
+
+.details-percentage-circle {
+   width: 10%;
+   height: 10%;
+}
+
+.title{
+   font-size: 370%;
+   font-weight: bold;
+}

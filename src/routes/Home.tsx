@@ -15,11 +15,10 @@ export default function Home(): JSX.Element {
          <LoginModal openModal={openModal} setOpenModal={setOpenModal} />
          <div className="slogans">
             <p className="slogan-one">
-               Your favourite <span>Video Games</span>, All in one place
+               Your favourite <span className="home-spans">Video Games</span>, All in one place
             </p>
             <p className="slogan-two">
-               Search for, find and bookmark your favourite video games and discover Free to play
-               games.
+               Search for, find and bookmark your favourite video games and discover Free to play games.
             </p>
             <button
                className="signup-button"
@@ -31,7 +30,7 @@ export default function Home(): JSX.Element {
             <p className="login-phrase">
                Already a Member?{' '}
                <span
-                  className="login-span"
+                  className="login-span home-spans"
                   onClick={() => {
                      setOpenModal(true);
                   }}>

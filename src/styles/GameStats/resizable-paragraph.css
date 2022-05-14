@@ -1,0 +1,13 @@
+.resizable-paragraph-resize-text {
+   color: gold;
+   cursor: pointer;
+}
+
+.resizable-paragraph-resize-text:hover {
+   text-decoration: underline;
+}
+
+.resizable-paragraph-content {
+   font-family: sans-serif;
+   color: #cecece;
+}
