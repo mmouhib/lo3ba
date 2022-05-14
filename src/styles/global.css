@@ -16,3 +16,27 @@
    font-family: soleil;
    src: url('../fonts/SoleilRegular.otf') format('truetype');
 }
+
+body::-webkit-scrollbar {
+   width: 0.2em;
+   height: 0.2em;
+}
+
+body::-webkit-scrollbar-track {
+   background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+   background: #3f3c3c;
+}
+
+body::-webkit-scrollbar-corner {
+   background: black;
+}
+
+@supports (scrollbar-color: red blue) {
+   * {
+      scrollbar-color: #3f3c3c black;
+      scrollbar-width: thin;
+   }
+}
