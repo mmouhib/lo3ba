@@ -1,15 +1,8 @@
-import '../../styles/GameStats/Reviews.css';
-import { BiHappyAlt } from 'react-icons/bi';
+import '../../../styles/GameStats/Reviews.css';
 import { RiStarSmileLine } from 'react-icons/ri';
 import { CgSmileNone } from 'react-icons/cg';
 import { FaRegSadTear } from 'react-icons/fa';
-
-interface IGameRatings {
-   id: number;
-   title: string;
-   count: number;
-   percent: number;
-}
+import { FaRegThumbsUp } from 'react-icons/fa';
 
 interface ReviewsProps {
    greatReviewsCount: number;
@@ -27,7 +20,7 @@ export default function Reviews(props: ReviewsProps) {
             <span className="review-title">great</span>
          </div>
          <div className="review-type">
-            <BiHappyAlt size={20} />
+            <FaRegThumbsUp size={20} />
             <span className="rating-count">{props.goodReviewsCount}</span>
             <span className="review-title">good</span>
          </div>

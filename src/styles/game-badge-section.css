@@ -1,0 +1,20 @@
+.release-date-playtime-section {
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   gap: 4%;
+   width: 100%;
+}
+
+.game-details-website-badge {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: row;
+   width: fit-content;
+   background: white;
+   color: black;
+   padding: 0 0.6%;
+   border-radius: 7px;
+   gap: 5px;
+}

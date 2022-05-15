@@ -1,0 +1,15 @@
+.game-platforms-component {
+   width: 35%;
+}
+
+.game-platforms-platform-name:hover {
+   text-decoration: underline;
+   color: #aaa;
+}
+
+.game-description-headers {
+   font-size: 160%;
+   margin-bottom: 5px;
+   font-weight: bold;
+   color: #aaa;
+}

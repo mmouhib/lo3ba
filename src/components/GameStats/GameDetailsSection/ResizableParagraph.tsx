@@ -1,4 +1,4 @@
-import '../../styles/GameStats/resizable-paragraph.css';
+import '../../../styles/GameStats/resizable-paragraph.css';
 import { useState } from 'react';
 
 interface ResizableParagraphProps {
@@ -28,7 +28,6 @@ export default function ResizableParagraph(props: ResizableParagraphProps) {
                         setParagraph(props.desc.substr(0, 490));
                      }
                   }}>
-                  {' '}
                   See {long ? 'less' : 'more'}
                </span>
             )}

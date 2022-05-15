@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
-import '../../styles/GameStats/game-page.css';
+import '../styles/GameStats/game-page.css';
 import { useParams } from 'react-router-dom';
 import 'react-circular-progressbar/dist/styles.css';
-import GameBanner from './GameBanner';
-import GameDetails from './GameDetails';
+import GameBanner from '../components/GameStats/GameBannerSection/GameBanner';
+import GameDetails from '../components/GameStats/GameDetailsSection/GameDetails';
 
 export default function GamePage(): JSX.Element {
    const [loaded, setLoaded] = useState<boolean>(false);

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../../styles/GameStats/game-stores.css';
+import '../../../styles/GameStats/game-stores.css';
 import axios, { AxiosResponse } from 'axios';
 
 import StoreButton from './StoreButton';

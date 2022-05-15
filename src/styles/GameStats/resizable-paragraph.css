@@ -1,13 +1,21 @@
 .resizable-paragraph-resize-text {
-   color: gold;
    cursor: pointer;
+   background: white;
+   color: black;
+   font-weight: bold;
+   margin-left: 5px;
+   border-radius: 6px;
+   padding: 0 3px;
+   font-size: 12px;
+   user-select: none;
 }
 
-.resizable-paragraph-resize-text:hover {
-   text-decoration: underline;
+.resizable-paragraph-component {
+   width: 76%;
 }
 
 .resizable-paragraph-content {
-   font-family: sans-serif;
-   color: #cecece;
+   font-family: 'Open Sans', sans-serif;
+   line-height: 30px;
+   font-weight: 400;
 }

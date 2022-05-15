@@ -1,7 +1,7 @@
 import Reviews from './Reviews';
 import GameStores from './GameStores';
 import React from 'react';
-import '../../styles/GameStats/game-banner.css';
+import '../../../styles/GameStats/game-banner.css';
 
 interface GamePageBannerProps {
    game: any;
@@ -13,6 +13,11 @@ export default function GameBanner({ game }: GamePageBannerProps) {
          <div className="game-page-banner">
             <img
                className="banner-image"
+               style={
+                  {
+                     // boxShadow: `0 0 40px 0 #0ff`,
+                  }
+               }
                src={
                   game.background_image_additional ? game.background_image_additional : game.background_image
                }

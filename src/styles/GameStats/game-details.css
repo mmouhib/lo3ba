@@ -2,14 +2,54 @@
    width: 70%;
    height: 100%;
    margin-top: 15%;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   flex-direction: column;
+   gap: 4%;
+}
+
+.title-section {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
 }
 
 .details-percentage-circle {
    width: 10%;
    height: 10%;
+   text-align: center;
+   font-family: 'Open Sans', sans-serif;
 }
 
-.title{
+.title {
    font-size: 370%;
    font-weight: bold;
+}
+
+.details-percentage-circle-decription {
+   font-size: 0.7em;
+   margin-top: 10%;
+}
+
+.game-details-release-date {
+   font-weight: bold;
+}
+
+.title-release-date-palytime {
+   width: 100%;
+}
+
+.game-description-headers {
+   font-size: 160%;
+   margin-bottom: 5px;
+   font-weight: bold;
+   color: #aaa;
+}
+
+.game-platforms-section {
+   width: 80%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 }
