@@ -5,10 +5,13 @@ import GamePlatforms from './GamePlatforms';
 import GameBadgesSection from './GameBadgesSection';
 import GameGenres from './GameGenres';
 import InfoSection from './InfoSection';
+import RelatedGamesAndDlcs from './RelatedGamesAndDlcs';
+import GameScreenshots from './GameScreenshots';
 
 interface GamePageBannerProps {
    game: any;
 }
+
 export default function GameDetails({ game }: GamePageBannerProps) {
    return (
       <div className="game-page-details">
@@ -44,6 +47,15 @@ export default function GameDetails({ game }: GamePageBannerProps) {
                <InfoSection data={game.developers} title="Developers" />
                <InfoSection data={game.publishers} title="Publishers" />
             </div>
+         </div>
+         <div style={{ width: '100%' }}>
+            <RelatedGamesAndDlcs gameId={game.id} series={false} />
+         </div>
+         <div style={{ width: '100%' }}>
+            <RelatedGamesAndDlcs gameId={game.id} series={true} />
+         </div>
+         <div style={{ width: '100%' }}>
+            <GameScreenshots gameId={game.id} />
          </div>
       </div>
    );

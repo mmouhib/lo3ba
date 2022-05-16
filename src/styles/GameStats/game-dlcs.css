@@ -1,0 +1,16 @@
+.game-series-component {
+   width: 80%;
+   height: fit-content;
+}
+
+.game-series-name {
+   background: black;
+   color: white;
+   padding: 5px;
+   margin: 0 5px;
+   border-radius: 5px;
+}
+
+.game-series-name:hover {
+   color: gainsboro;
+}

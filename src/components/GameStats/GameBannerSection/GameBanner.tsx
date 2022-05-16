@@ -25,10 +25,11 @@ export default function GameBanner({ game }: GamePageBannerProps) {
             />
             <h1 className="banner-game-title">{game.name}</h1>
             <Reviews
-               greatReviewsCount={game.ratings[0].count}
-               goodReviewsCount={game.ratings[1].count}
-               mehReviewsCount={game.ratings[2].count}
-               badReviewsCount={game.ratings[3].count}
+               game={game}
+               // greatReviewsCount={game.ratings[0].count}
+               // goodReviewsCount={game.ratings[1].count}
+               // mehReviewsCount={game.ratings[2].count}
+               // badReviewsCount={game.ratings[3].count}
             />
             <GameStores gameId={game.id} />
          </div>

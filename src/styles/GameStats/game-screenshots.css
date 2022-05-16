@@ -1,0 +1,14 @@
+.game-screenshots-component {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   width: 90%;
+}
+
+.game-screenshots-screenshot {
+   width: 25%;
+   padding: 15px;
+   cursor: pointer;
+}
+
