@@ -11,7 +11,7 @@ export default function GamePlatforms({ game }: GamePlatformsProps) {
          {game.platforms.map((element: any, index: any) => {
             return (
                <span key={index} className="game-platforms-platform-name">
-                  {element.platform.name},{' '}
+                  {index < game.platforms.length - 1 ? element.platform.name + ', ' : element.platform.name}
                </span>
             );
          })}

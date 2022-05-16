@@ -1,17 +1,18 @@
 import '../../../styles/GameStats/game-developers.css';
 
 interface GamePlatformsProps {
-   game: any;
+   data: any;
+   title: string;
 }
 
-export default function GameDevelopers({ game }: GamePlatformsProps) {
+export default function InfoSection({ data, title }: GamePlatformsProps) {
    return (
       <div className="game-developers-component">
-         <h1 className="game-description-headers">Developers</h1>
-         {game.developers.map((element: any, index: any) => {
+         <h1 className="game-description-headers">{title}</h1>
+         {data.map((element: any, index: any) => {
             return (
                <span key={index} className="game-developers-platform-name">
-                  {element.name},{' '}
+                  {index < data.length - 1 ? element.name + ', ' : element.name}
                </span>
             );
          })}
