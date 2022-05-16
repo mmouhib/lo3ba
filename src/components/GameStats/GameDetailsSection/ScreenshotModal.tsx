@@ -1,6 +1,5 @@
 import '../../../styles/GameStats/screeshots-modal.css';
 import { Modal, ModalOverlay, ModalContent, ModalBody } from '@chakra-ui/react';
-import { useState } from 'react';
 
 interface ScreenshotModalProps {
    imageUrl: string;

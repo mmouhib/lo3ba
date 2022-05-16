@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import 'react-circular-progressbar/dist/styles.css';
 import GameBanner from '../components/GameStats/GameBannerSection/GameBanner';
 import GameDetails from '../components/GameStats/GameDetailsSection/GameDetails';
+import LoadingScreen from '../components/LoadingScreen';
 
 export default function GamePage(): JSX.Element {
    const [loaded, setLoaded] = useState<boolean>(false);
@@ -23,6 +24,7 @@ export default function GamePage(): JSX.Element {
 
    return (
       <div className="game-page-component">
+         <LoadingScreen loading={!loaded} />
          {loaded && (
             <>
                <div className="game-page-image-container">
