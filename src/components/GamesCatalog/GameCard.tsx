@@ -10,6 +10,7 @@ interface GameCardProps {
 export default function GameCard(props: GameCardProps) {
    const [game, setGame] = useState<any>();
    const [loaded, setLoaded] = useState<boolean>(false);
+   const [hover, setHover] = useState<boolean>(false);
 
    useEffect(() => {
       axios
@@ -29,7 +30,7 @@ export default function GameCard(props: GameCardProps) {
                      <img src={game.background_image} alt="x" className="game-card-image" />
                   </div>
                   <div className="game-card-content">
-                     <h1>{game.name}</h1>
+                     <h1 className="game-card-title">{game.name}</h1>
                      <GameCardPlatforms gameId={props.gameId} />
                   </div>
                </a>

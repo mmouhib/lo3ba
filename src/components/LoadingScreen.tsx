@@ -56,7 +56,6 @@ export default function LoadingScreen({ loading }: LoadingScreenProps) {
                            }
                         }
                         setLoadingComp(Math.floor(Math.random() * loadingComponents.length - 1) + 1);
-                        console.log(loadingComp);
                      }}>
                      Change loading animation
                   </span>

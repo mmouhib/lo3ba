@@ -9,14 +9,14 @@
    flex-direction: column;
    transition: all 0.7s;
    overflow: hidden;
-   margin-bottom: 15px;
+   margin-bottom: 3%;
 }
 
 .game-card-component:hover {
-   width: 22%;
-   height: 15%;
+   width: 16%;
+   height: 16%;
    transition: all 0.5s;
-   background: #8d2cff;
+   background: #040418;
 }
 
 .game-card-image-section {
@@ -38,6 +38,15 @@
    color: white;
    width: 100%;
    height: 40%;
-   padding: 2%;
+   padding: 5%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 1vh;
+}
 
+.game-card-title {
+   font-size: 100%;
+   line-break: loose;
 }
