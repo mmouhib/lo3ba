@@ -1,4 +1,4 @@
-import '../styles/username-suggestion.css';
+import '../../styles/Forms/username-suggestion.css';
 
 interface UsernameSuggestionProps {
    firstName: string;

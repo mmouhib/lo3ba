@@ -1,7 +1,7 @@
-import SignUpForm from '../components/forms/SignUpForm';
+import SignUpForm from '../components/Forms/SignUpForm';
 import Logo from '../assets/logo.png';
-import '../styles/signup.css';
-import LoginForm from '../components/forms/LoginForm';
+import '../styles/Routes/AuthPage.css';
+import LoginForm from '../components/Forms/LoginForm';
 import { useState } from 'react';
 import { Switch } from '@chakra-ui/react';
 
@@ -23,7 +23,11 @@ export default function AuthPage(): JSX.Element {
                />
                <p className="switch-labels">Sign up</p>
             </div>
-            {selectedForm ? <SignUpForm setForm={setSelectedForm} /> : <LoginForm setForm={setSelectedForm} />}
+            {selectedForm ? (
+               <SignUpForm setForm={setSelectedForm} />
+            ) : (
+               <LoginForm setForm={setSelectedForm} />
+            )}
          </div>
       </div>
    );

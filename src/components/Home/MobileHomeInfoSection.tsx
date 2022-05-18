@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/mobile-home-info-selection.css';
+import '../../styles/Home/mobile-home-info-selection.css';
 
 export default function MobileHomeInfoSection(): JSX.Element {
    const [displayDots, setDisplayDots] = useState<boolean[]>([true, false, false, false]);

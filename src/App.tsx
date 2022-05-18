@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { IThemeContext, themeContext } from './context/ThemeContext';
 import { useContext } from 'react';
 import GamePage from './routes/GamePage';
+import GamesCatalog from './routes/GamesCatalog';
 
 const lightTheme = { background: '#ffffff', mainTextColor: '#black' };
 const darkTheme = { background: '#181a1b', mainTextColor: '#ffffff' };
@@ -19,6 +20,7 @@ export default function App(): JSX.Element {
                <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/signup" element={<AuthPage />} />
+                  <Route path="/list" element={<GamesCatalog />} />
                   <Route path="/game/:id" element={<GamePage />} />
                </Routes>
             </SearchContextProvider>

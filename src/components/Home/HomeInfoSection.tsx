@@ -1,7 +1,7 @@
-import illustration from '../assets/illustration.png';
+import illustration from '../../assets/illustration.png';
 import React from 'react';
 import MobileHomeInfoSection from './MobileHomeInfoSection';
-import '../styles/home-info-section.css';
+import '../../styles/Home/home-info-section.css';
 
 export default function HomeInfoSection(): JSX.Element {
    return (

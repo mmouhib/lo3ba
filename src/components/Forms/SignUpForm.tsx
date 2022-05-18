@@ -1,4 +1,4 @@
-import '../../styles/signup-form.css';
+import '../../styles/Forms/signup-form.css';
 import React, { useEffect, useState } from 'react';
 import { Button, Checkbox, Input, InputGroup, InputLeftElement, InputRightElement, Select, useToast } from '@chakra-ui/react';
 // @ts-ignore

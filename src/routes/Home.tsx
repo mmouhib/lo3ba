@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import NavBar from '../components/NavBar';
-import HomeInfoSection from '../components/HomeInfoSection';
-import LoginModal from '../components/forms/LoginModal';
+import NavBar from '../components/Home/NavBar';
+import HomeInfoSection from '../components/Home/HomeInfoSection';
+import LoginModal from '../components/Forms/LoginModal';
 import { useNavigate } from 'react-router-dom';
-import '../styles/home.css';
+import '../styles/Routes/home.css';
 
 export default function Home(): JSX.Element {
    const [openModal, setOpenModal] = useState<boolean>(false);

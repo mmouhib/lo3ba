@@ -1,7 +1,7 @@
-import navLogo from '../assets/navLogo.png';
+import navLogo from '../../assets/navLogo.png';
 import ThemeToggler from './ThemeToggler';
 import { useEffect, useState } from 'react';
-import '../styles/navbar.css';
+import '../../styles/Home/navbar.css';
 
 interface NavbarProps {
    setOpenModal: (arg: boolean) => void;

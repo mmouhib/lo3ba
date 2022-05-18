@@ -1,6 +1,6 @@
 import { Button, Input, InputGroup, InputLeftElement, InputRightElement } from '@chakra-ui/react';
 import { EmailIcon, LockIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import '../../styles/login-form.css';
+import '../../styles/Forms/login-form.css';
 import React, { useState } from 'react';
 // @ts-ignore
 import ReCAPTCHA from 'react-google-recaptcha';

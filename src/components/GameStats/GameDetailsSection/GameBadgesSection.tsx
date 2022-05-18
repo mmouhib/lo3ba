@@ -2,7 +2,7 @@ import { IoMdGlobe } from 'react-icons/io';
 import { BsCalendar } from 'react-icons/bs';
 import { GiEmptyHourglass } from 'react-icons/gi';
 
-import '../../../styles/game-badge-section.css';
+import '../../../styles/GameStats/game-badge-section.css';
 
 interface GameBadgesSectionProps {
    game: any;

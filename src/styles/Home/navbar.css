@@ -8,6 +8,7 @@
    justify-content: space-between;
    font-family: 'soleil bold', serif;
    height: 6vh;
+   background: white;
 }
 
 @media (max-width: 700px) {

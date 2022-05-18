@@ -1,10 +1,10 @@
-import { ReactComponent as SystemIcon } from '../assets/icons/themeTogglerIcons/system.svg';
-import { ReactComponent as LightIcon } from '../assets/icons/themeTogglerIcons/light.svg';
-import { ReactComponent as DarkIcon } from '../assets/icons/themeTogglerIcons/dark.svg';
-import { themeContext, IThemeContext } from '../context/ThemeContext';
+import { ReactComponent as SystemIcon } from '../../assets/icons/themeTogglerIcons/system.svg';
+import { ReactComponent as LightIcon } from '../../assets/icons/themeTogglerIcons/light.svg';
+import { ReactComponent as DarkIcon } from '../../assets/icons/themeTogglerIcons/dark.svg';
+import { themeContext, IThemeContext } from '../../context/ThemeContext';
 import { useContext } from 'react';
-import { useThemeDetector } from '../hooks/systemTheme';
-import '../styles/theme-toggler.css';
+import { useThemeDetector } from '../../hooks/systemTheme';
+import '../../styles/Home/theme-toggler.css';
 
 //todo: hide menu on click-away (useRef hook)
 export default function ThemeToggler(): JSX.Element {
