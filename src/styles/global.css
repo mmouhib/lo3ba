@@ -42,3 +42,7 @@
       scrollbar-width: thin;
    }
 }
+
+* {
+   box-sizing: border-box;
+}

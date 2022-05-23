@@ -22,6 +22,12 @@ export default function GamePage(): JSX.Element {
          });
    }, []);
 
+   useEffect(() => {
+      if (loaded) {
+         document.title = game.name;
+      }
+   }, [loaded]);
+
    return (
       <div className="game-page-component">
          <LoadingScreen loading={!loaded} />

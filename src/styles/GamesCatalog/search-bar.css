@@ -1,0 +1,27 @@
+.search-bar-component {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 1%;
+   /*background: #3d3d3d;*/
+   width: 100%;
+   gap: 5%;
+}
+
+.search-group {
+   width: 100%;
+}
+
+.search-input-group {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 40%;
+   position: relative;
+   left: 25%;
+   gap: 2%;
+}
+
+.search-input:focus {
+   color: white;
+}

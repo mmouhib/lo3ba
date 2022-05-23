@@ -1,0 +1,15 @@
+.games-catalog-content {
+   padding: 3%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: row;
+   gap: 2.1%;
+   flex-wrap: wrap;
+}
+
+.no-data-message{
+    font-size: 2rem;
+    color: white;
+    margin-top: 15%;
+}

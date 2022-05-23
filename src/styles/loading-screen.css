@@ -37,4 +37,6 @@
    align-items: center;
    justify-content: end;
    flex-direction: column;
+   /*next line: hide the loading animation changer*/
+   visibility: hidden;
 }
