@@ -1,0 +1,29 @@
+.sorting-section-component {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.sorting-section-component-content {
+   width: 70%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 3%;
+}
+
+.sorting-method-select-section {
+   width: fit-content;
+}
+.sorting-method-select {
+   border-radius: 6px;
+   outline: none;
+   padding: 3px;
+   font-weight: 600;
+}
+
+.games-number-slider {
+   width: 25%;
+   color: white;
+}

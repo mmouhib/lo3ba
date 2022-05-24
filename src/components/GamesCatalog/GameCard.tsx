@@ -11,7 +11,6 @@ interface GameCardProps {
 export default function GameCard(props: GameCardProps) {
    const [game, setGame] = useState<any>();
    const [loaded, setLoaded] = useState<boolean>(false);
-   const [hover, setHover] = useState<boolean>(false);
 
    useEffect(() => {
       axios
@@ -20,7 +19,7 @@ export default function GameCard(props: GameCardProps) {
             setGame(response.data);
             setLoaded(true);
          });
-   }, []);
+   }, [props.gameId]);
 
    return (
       <>
