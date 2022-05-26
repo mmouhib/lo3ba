@@ -1,0 +1,25 @@
+.page-navigation-component {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 3%;
+   margin-bottom: 2vw;
+}
+
+.navigation-buttons {
+   text-align: center;
+   width: 150px;
+   height: auto;
+   font-weight: bold;
+   font-family: sans-serif;
+   border: 3px solid #f90;
+   color: #f90;
+   padding: 5px;
+   border-radius: 5px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 20%;
+}

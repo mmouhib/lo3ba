@@ -5,6 +5,7 @@ import LoadingScreen from '../components/LoadingScreen';
 import GamesList from '../components/GamesCatalog/GamesList';
 import SearchBar from '../components/GamesCatalog/SearchBar';
 import SortingSection from '../components/GamesCatalog/SortingSection';
+import PageNavigation from '../components/GamesCatalog/PageNavigation';
 
 export default function GamesCatalog(): any {
    const [loaded, setLoaded] = useState<boolean>(false);
@@ -13,6 +14,7 @@ export default function GamesCatalog(): any {
    const [gamesPerPage, setGamesPerPage] = useState<number>(20);
    const [searchQuery, setSearchQuery] = useState<string>('');
    const [ordering, setOrdering] = useState<string>('metacritic');
+   const [nextPageExists, setNextPageExists] = useState<boolean>(true);
 
    const [url, setUrl] = useState<string>(
       `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}&page=${currentPage}&&search=${searchQuery}&page_size=${gamesPerPage}&search_precise=true&search_exact=true&metacritic=10,100&ordering=${ordering}`
@@ -21,6 +23,7 @@ export default function GamesCatalog(): any {
    useEffect(() => {
       setLoaded(false);
       axios.get(url).then((response: AxiosResponse): void => {
+         setNextPageExists(response.data.next != 'null');
          setData(response.data.results);
          setLoaded(true);
       });
@@ -41,7 +44,16 @@ export default function GamesCatalog(): any {
             gamesPerPage={gamesPerPage}
             setGamesPerPage={setGamesPerPage}
          />
-         {data && loaded && <GamesList data={data} />}
+         {data && loaded && (
+            <>
+               <GamesList data={data} />
+               <PageNavigation
+                  currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
+                  nextPageExists={nextPageExists}
+               />
+            </>
+         )}
       </div>
    );
 }
