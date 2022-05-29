@@ -43,6 +43,13 @@ export default function NavBar(props: NavbarProps) {
                }}>
                Find Games
             </p>
+            <p
+               className="list-navigator"
+               onClick={() => {
+                  navigation('/favourites');
+               }}>
+               See you favourites
+            </p>
             {openThemeToggler && <ThemeToggler />}
             <button
                className="login-button"

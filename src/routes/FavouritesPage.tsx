@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import '../styles/FavouritesPage/favourites-page.css';
 import GameCard from '../components/GamesCatalog/GameCard';
 
@@ -30,7 +29,7 @@ export default function FavouritesPage() {
                </div>
             )}
             {allStorage().map((element: any, index: any) => {
-               return <GameCard gameId={element} />;
+               return <GameCard gameId={element} key={index} />;
             })}
          </div>
       </div>
