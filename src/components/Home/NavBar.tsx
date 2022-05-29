@@ -2,6 +2,7 @@ import navLogo from '../../assets/navLogo.png';
 import ThemeToggler from './ThemeToggler';
 import { useEffect, useState } from 'react';
 import '../../styles/Home/navbar.css';
+import { useNavigate } from 'react-router-dom';
 
 interface NavbarProps {
    setOpenModal: (arg: boolean) => void;
@@ -16,6 +17,8 @@ export default function NavBar(props: NavbarProps) {
          window.scrollY > 5 ? setScrolled(true) : setScrolled(false);
       };
    }, []);
+
+   let navigation = useNavigate();
 
    return (
       <nav
@@ -32,6 +35,13 @@ export default function NavBar(props: NavbarProps) {
                   setOpenThemeToggler(!openThemeToggler);
                }}>
                Theme
+            </p>
+            <p
+               className="list-navigator"
+               onClick={() => {
+                  navigation('/list');
+               }}>
+               Find Games
             </p>
             {openThemeToggler && <ThemeToggler />}
             <button
