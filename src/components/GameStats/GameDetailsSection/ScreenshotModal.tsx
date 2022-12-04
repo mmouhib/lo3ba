@@ -23,7 +23,6 @@ export default function ScreenshotModal({ imageUrl, isOpen, setIsOpen }: Screens
                   <div className="modal-content">
                      <img
                         className="screenshot-modal-image"
-                        // src="https://media.rawg.io/media/screenshots/a7c/a7c43871a54bed6573a6a429451564ef.jpg"
                         src={imageUrl}
                         alt="screenshot"
                      />
